@@ -7,8 +7,6 @@ class LoginScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Material(
         child: Container(
-            width: 1080,
-            height: 1920,
             decoration: const BoxDecoration(
               image: DecorationImage(
                   image: NetworkImage(
