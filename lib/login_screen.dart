@@ -1,3 +1,4 @@
+import 'package:cardify/authscreen.dart';
 import 'package:flutter/material.dart';
 
 class LoginScreen extends StatelessWidget {
@@ -79,7 +80,9 @@ class LoginScreen extends StatelessWidget {
                                             side: const BorderSide(
                                                 color: Color.fromARGB(
                                                     255, 0, 0, 0))))),
-                            onPressed: () {},
+                            onPressed: () {
+                              Navigator.pushNamed(context, '/auth');
+                            },
                             child: Text(
                                 "                  login                  "
                                     .toUpperCase(),
