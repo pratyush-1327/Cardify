@@ -1,3 +1,4 @@
+// ignore: unused_import
 import 'package:cardify/authscreen.dart';
 import 'package:flutter/material.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
@@ -7,6 +8,7 @@ class LoginScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // ignore: non_constant_identifier_names
     return ResponsiveSizer(builder: (context, orientation, ScreenType) {
       return Material(
           child: Container(
