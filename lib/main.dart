@@ -1,4 +1,5 @@
 import 'package:cardify/authscreen.dart';
+import 'package:cardify/components/Layout.dart';
 import 'package:flutter/material.dart';
 import 'package:cardify/login_screen.dart';
 
@@ -16,10 +17,11 @@ class MyApp extends StatelessWidget {
       theme: ThemeData.dark().copyWith(
         scaffoldBackgroundColor: const Color.fromARGB(255, 18, 32, 47),
       ),
-      initialRoute: '/',  // Set the initial route to the login screen
+      initialRoute: '/home', // Set the initial route to the login screen
       routes: {
         '/': (context) => const LoginScreen(),
-        '/auth': (context) => const AuthScreen(),  // Route for the login screen
+        '/auth': (context) => const AuthScreen(), // Route for the login screen
+        '/home': (context) => const Layout(),
       },
     );
   }
