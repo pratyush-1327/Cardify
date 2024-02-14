@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "44900799604",
+    "project_id": "cardify-fbdf0",
+    "storage_bucket": "cardify-fbdf0.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:44900799604:android:f995b860a166bfb9ea6d21",
+        "android_client_info": {
+          "package_name": "com.example.cardify"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyADPA0-xQSyJA89qKpLluukb3RX1TNs4jE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

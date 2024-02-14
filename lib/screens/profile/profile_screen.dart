@@ -1,16 +1,18 @@
 import 'package:cardify/constants/Assets.dart';
 import 'package:cardify/constants/Pallete.dart';
+import 'package:cardify/provider/auth.provider.dart';
 import 'package:cardify/screens/profile/containers/options.dart';
 import 'package:cardify/screens/profile/containers/user_details.dart';
 import 'package:cardify/screens/profile/widgets/action_button.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class ProfileScreen extends StatelessWidget {
   const ProfileScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return const Column(
+    return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
         Text(
@@ -39,6 +41,12 @@ class ProfileScreen extends StatelessWidget {
             ),
             Expanded(
                 child: ActionButton(
+              fun: () {
+                context.read<FireAuth>().logout().then((value) {
+                  Navigator.pushNamedAndRemoveUntil(
+                      context, "/", (route) => false);
+                });
+              },
               text: "Logout",
               bgColor: Pallete.red,
               imageUrl: Assets.logout,

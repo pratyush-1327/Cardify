@@ -4,8 +4,10 @@ class ActionButton extends StatelessWidget {
   final String text;
   final Color bgColor;
   final String imageUrl;
+  final Function? fun;
   const ActionButton(
       {super.key,
+      this.fun,
       required this.text,
       required this.bgColor,
       required this.imageUrl});
@@ -49,7 +51,12 @@ class ActionButton extends StatelessWidget {
           ],
         ),
       ),
-      onTap: () {},
+      onTap: () {
+        if(fun != null){
+
+        fun!.call();
+        }
+      },
     );
   }
 }
