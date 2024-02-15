@@ -200,7 +200,7 @@ class _AuthScreenState extends State<AuthScreen> {
                         height: 53,
                         alignment: Alignment.center,
                         child: const Text(
-                          'Verify My Fingerprint',
+                          'Verify My ID',
                           textAlign: TextAlign.center,
                           style: TextStyle(
                             color: Colors.white,

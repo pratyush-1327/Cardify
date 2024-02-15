@@ -24,7 +24,7 @@ class _LoginScreenState extends State<LoginScreen> {
           child: Container(
               decoration: const BoxDecoration(
                 image: DecorationImage(
-                    image: AssetImage("assets/bg.png"), fit: BoxFit.fill),
+                    image: AssetImage("assets/bg2.png"), fit: BoxFit.fill),
               ),
               child: Consumer<FireAuth>(
                 builder: (context, value, child) {
@@ -160,17 +160,23 @@ class _LoginScreenState extends State<LoginScreen> {
                         )),
                     Align(
                         alignment: Alignment(2.5.sp, 3.9.sp),
-                        child: Text(
-                          'Register Now',
-                          textAlign: TextAlign.left,
-                          style: TextStyle(
-                              color: const Color.fromARGB(255, 12, 84, 252),
-                              fontFamily: 'Inter',
-                              fontSize: 15.sp,
-                              letterSpacing:
-                                  0 /*percentages not used in flutter. defaulting to zero*/,
-                              fontWeight: FontWeight.normal,
-                              height: 5.sp),
+                        
+                        child: GestureDetector(
+                          onTap: () {
+                            Navigator.pushNamed(context, '/register');
+                          },
+                          child: Text(
+                            'Register Now',
+                            textAlign: TextAlign.left,
+                            style: TextStyle(
+                                color: Color.fromARGB(255, 245, 8, 185),
+                                fontFamily: 'Inter',
+                                fontSize: 15.sp,
+                                letterSpacing:
+                                    0 /*percentages not used in flutter. defaulting to zero*/,
+                                fontWeight: FontWeight.normal,
+                                height: 5.sp),
+                          ),
                         )),
                     Align(
                         alignment: Alignment(0.5.sp, 0.8.sp),
