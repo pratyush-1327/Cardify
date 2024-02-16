@@ -4,6 +4,8 @@ import 'package:cardify/components/Layout.dart';
 import 'package:cardify/firebase_options.dart';
 import 'package:cardify/provider/auth.provider.dart';
 import 'package:cardify/register_screen.dart';
+import 'package:cardify/screens/upload.document.dart';
+import 'package:cardify/screens/video.verification.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
@@ -32,13 +34,17 @@ class MyApp extends StatelessWidget {
         theme: ThemeData.dark().copyWith(
           scaffoldBackgroundColor: const Color.fromARGB(255, 18, 32, 47),
         ),
+        initialRoute: VideoVerification.videoVerificationtRoute,
         routes: {
-          '/auth': (context) =>
-              const AuthScreen(), // Route for the login screen
+          '/auth': (context) => const AuthScreen(),
+          // Route for the login screen
+          UploadDocument.uploadDocumentRoute: (context) => UploadDocument(),
+          VideoVerification.videoVerificationtRoute: (context) =>
+              VideoVerification(),
           '/': (context) => const LoginScreen(),
           '/home': (context) => const Layout(),
-          '/register':(context) => const RegisterScreen(),
-          '/authdone':(context) => const FaceDone(),
+          '/register': (context) => const RegisterScreen(),
+          '/authdone': (context) => const FaceDone(),
         },
       ),
     );

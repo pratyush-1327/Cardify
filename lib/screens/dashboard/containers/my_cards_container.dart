@@ -52,23 +52,17 @@ class MyCards extends StatelessWidget {
         const SizedBox(
           height: 10.0,
         ),
-        const Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            OptionButton(icon: Assets.payment, text: "Payment"),
-            SizedBox(
-              width: 20,
-            ),
-            OptionButton(icon: Assets.send, text: "Send"),
-            SizedBox(
-              width: 20,
-            ),
-            OptionButton(icon: Assets.recieve, text: "Recieve"),
-            SizedBox(
-              width: 20,
-            ),
-            OptionButton(icon: Assets.more, text: "More")
-          ],
+        const Padding(
+          padding: EdgeInsets.symmetric(horizontal: 10),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              OptionButton(icon: Assets.payment, text: "Payment"),
+              OptionButton(icon: Assets.send, text: "Send"),
+              OptionButton(icon: Assets.recieve, text: "Recieve"),
+              OptionButton(icon: Assets.more, text: "More")
+            ],
+          ),
         )
       ],
     );

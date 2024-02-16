@@ -37,7 +37,7 @@ class CardComponent extends StatelessWidget {
                 style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
               ),
               Text(
-                "0000-0000-0000-0000",
+                "0000-0000...",
                 style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
               ),
             ],
