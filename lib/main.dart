@@ -1,3 +1,4 @@
+import 'package:cardify/authdone_screen.dart';
 import 'package:cardify/authscreen.dart';
 import 'package:cardify/components/Layout.dart';
 import 'package:cardify/firebase_options.dart';
@@ -37,6 +38,7 @@ class MyApp extends StatelessWidget {
           '/': (context) => const LoginScreen(),
           '/home': (context) => const Layout(),
           '/register':(context) => const RegisterScreen(),
+          '/authdone':(context) => const FaceDone(),
         },
       ),
     );
