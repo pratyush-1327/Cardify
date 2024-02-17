@@ -28,7 +28,7 @@ class BankOps extends StatelessWidget {
         body: Container(
           decoration: const BoxDecoration(
             image: DecorationImage(
-                image: AssetImage("assets/bg2.png"), fit: BoxFit.fill),
+                image: AssetImage("assets/bg_3.png"), fit: BoxFit.fill),
           ),
           child: ListView.builder(
               itemCount: 5,
@@ -82,9 +82,6 @@ class BankOps extends StatelessWidget {
                                 color: Color.fromRGBO(0, 0, 0, 1),
                                 fontFamily: 'Roboto',
                                 fontSize: 22,
-                                letterSpacing:
-                                    0 /*percentages not used in flutter. defaulting to zero*/,
-                                fontWeight: FontWeight.normal,
                                 height: 1),
                           )),
                       Positioned(
