@@ -8,8 +8,11 @@ class FaceDone extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: ListView(
-        children: [Material(
-          child: Container(
+        children: [Column(
+          children: [
+            Container(
+            width: 390,
+            height: 700,
             decoration: const BoxDecoration(
             image: DecorationImage(
               image: AssetImage('assets/bg2.png'), 
@@ -21,17 +24,17 @@ class FaceDone extends StatelessWidget {
               crossAxisAlignment:  CrossAxisAlignment.center,
               children:  [
                 Container(
-                  margin:  const EdgeInsets.fromLTRB(258, 0, 0, 224),
-                  width:  30,
-                  height:  30,
+                  margin:  const EdgeInsets.fromLTRB(258, 20, 0, 224),
+                  width:  50,
+                  height:  50,
                   child:
                   Image.asset('assets/cross.png',
-                    width:  30,
-                    height:  30,
+                  width:  30,
+                  height:  30,
                   ),
                 ),
                 Container(
-                  margin:  const EdgeInsets.fromLTRB(0, 0, 50, 300),
+                  margin:  const EdgeInsets.fromLTRB(0, 0, 30, 150),
                   width:  136,
                   height:  136,
                   child:
@@ -40,14 +43,15 @@ class FaceDone extends StatelessWidget {
                     height:  136,
                   ),
                 ),
-                CustomElevatedButton(
+                const SizedBox(height: 20),
+                CustomBottomButton(
                   onPressed:(){},
                   text:'Done'
                   ),
               ],
             ),
           ),
-        ),
+        ]),
       ]),
     );
   }

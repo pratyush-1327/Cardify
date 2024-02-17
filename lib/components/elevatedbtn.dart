@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
-class CustomElevatedButton extends StatelessWidget {
+class CustomBottomButton extends StatelessWidget {
   final VoidCallback onPressed;
   final String text;
 
-  const CustomElevatedButton({
+  const CustomBottomButton({
     Key? key,
     required this.onPressed,
     required this.text,
@@ -12,61 +13,39 @@ class CustomElevatedButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ElevatedButton(
-      onPressed: onPressed,
-      style: ButtonStyle(
-        backgroundColor: MaterialStateProperty.resolveWith<Color>((Set<MaterialState> states) {
-          // Provide a default color if null is returned
-          return const Color(0xFF4564FF);
-        }),
-        overlayColor: MaterialStateProperty.resolveWith<Color>((Set<MaterialState> states) {
-          // Provide a default overlay color if null is returned
-          return Colors.white.withOpacity(0.2);
-        }),
-        elevation: MaterialStateProperty.all<double>(10),
-        shadowColor: MaterialStateProperty.all<Color>(const Color(0x66000000)),
-        shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-          RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(40),
-            side: BorderSide(
-              width: 1,
-              color: Colors.white.withOpacity(0.4),
-            ),
-          ),
+    return Container(
+      height: 53,
+      width: 242,
+      margin: const EdgeInsets.symmetric(horizontal: 30, vertical: 20),
+      decoration: BoxDecoration(
+        gradient: const LinearGradient(
+          begin: Alignment(1.00, -0.05),
+          end: Alignment(-1, 0.05),
+          colors: [Color(0xFF4564FF), Color(0x6BFF3FA2)],
         ),
+        borderRadius: BorderRadius.circular(40),
+        boxShadow: const [
+          BoxShadow(
+            color: Color(0x66000000),
+            blurRadius: 10,
+            offset: Offset(1, 5),
+            spreadRadius: 0,
+          ),
+        ],
       ),
-      child: Container(
-        width: 242,
-        height: 53,
-        decoration: BoxDecoration(
-          gradient: const LinearGradient(
-            begin: Alignment(1.00, -0.05),
-            end: Alignment(-1, 0.05),
-            colors: [Color(0xFF4564FF), Color(0x00FF3FA2)],
-          ),
-          borderRadius: BorderRadius.circular(40),
-          border: Border.all(
-            width: 1,
-            color: Colors.white.withOpacity(0.4),
-          ),
-          boxShadow: const [
-            BoxShadow(
-              color: Color(0x66000000),
-              blurRadius: 10,
-              offset: Offset(1, 5),
-              spreadRadius: 0,
-            ),
-          ],
-        ),
+      child: InkWell(
+        onTap: onPressed,
+        borderRadius: BorderRadius.circular(35),
+        splashColor: Colors.white,
         child: Center(
           child: Text(
             text,
             textAlign: TextAlign.center,
-            style: const TextStyle(
+            style: GoogleFonts.roboto(
               color: Colors.white,
-              fontSize: 14,
-              fontFamily: 'Inter',
-              fontWeight: FontWeight.w500,
+              fontSize: 20,
+              fontWeight: FontWeight.w400,
+              height: 0,
             ),
           ),
         ),

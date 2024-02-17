@@ -25,7 +25,7 @@ class _UploadDocumentState extends State<UploadDocument> {
     return Container(
       height: double.infinity,
       width: double.infinity,
-      decoration: BoxDecoration(
+      decoration: const BoxDecoration(
           image: DecorationImage(
               image: AssetImage(
                 "assets/bg2.png",
@@ -49,7 +49,7 @@ class _UploadDocumentState extends State<UploadDocument> {
                             style: GoogleFonts.inter(
                               fontSize: 14,
                               fontWeight: FontWeight.w400,
-                              color: Color.fromARGB(255, 127, 127, 127),
+                              color: const Color.fromARGB(255, 127, 127, 127),
                             ),
                             overflow: TextOverflow.ellipsis,
                           ),
@@ -64,7 +64,7 @@ class _UploadDocumentState extends State<UploadDocument> {
                                 style: GoogleFonts.inter(
                                   fontSize: 14,
                                   fontWeight: FontWeight.w400,
-                                  color: Color.fromARGB(255, 127, 127, 127),
+                                  color: const Color.fromARGB(255, 127, 127, 127),
                                 ),
                                 overflow: TextOverflow.ellipsis,
                               ),
@@ -80,7 +80,7 @@ class _UploadDocumentState extends State<UploadDocument> {
                       height: 50,
                       padding: const EdgeInsets.only(left: 14, right: 14),
                       decoration: BoxDecoration(
-                        image: DecorationImage(
+                        image: const DecorationImage(
                             image: AssetImage(
                               "assets/bg2.png",
                             ),
@@ -104,7 +104,7 @@ class _UploadDocumentState extends State<UploadDocument> {
                     dropdownStyleData: DropdownStyleData(
                       maxHeight: 200,
                       decoration: BoxDecoration(
-                        image: DecorationImage(
+                        image: const DecorationImage(
                             image: AssetImage(
                               "assets/bg2.png",
                             ),
@@ -128,9 +128,9 @@ class _UploadDocumentState extends State<UploadDocument> {
                   height: 333,
                   width: double.infinity,
                   decoration: ShapeDecoration(
-                    color: Color(0x00D9D9D9),
+                    color: const Color(0x00D9D9D9),
                     shape: RoundedRectangleBorder(
-                      side: BorderSide(width: 4, color: Color(0xFFFF3FA2)),
+                      side: const BorderSide(width: 4, color: Color(0xFFFF3FA2)),
                       borderRadius: BorderRadius.circular(40),
                     ),
                   ),
@@ -140,8 +140,8 @@ class _UploadDocumentState extends State<UploadDocument> {
                       splashFactory:
                           InkSparkle.constantTurbulenceSeedSplashFactory,
                       onTap: () {},
-                      splashColor: Color(0xFFFF3FA2).withOpacity(0.4),
-                      child: Icon(Icons.add_rounded,
+                      splashColor: const Color(0xFFFF3FA2).withOpacity(0.4),
+                      child: const Icon(Icons.add_rounded,
                           size: 150, color: Color(0xFFFF3FA2))),
                 ),
                 Text(
@@ -158,15 +158,15 @@ class _UploadDocumentState extends State<UploadDocument> {
         bottomNavigationBar: Container(
           height: 53,
           width: double.infinity,
-          margin: EdgeInsets.symmetric(horizontal: 67, vertical: 20),
+          margin: const EdgeInsets.symmetric(horizontal: 67, vertical: 20),
           decoration: BoxDecoration(
-            gradient: LinearGradient(
+            gradient: const LinearGradient(
               begin: Alignment(1.00, -0.05),
               end: Alignment(-1, 0.05),
               colors: [Color(0xFF4564FF), Color(0x6BFF3FA2)],
             ),
             borderRadius: BorderRadius.circular(40),
-            boxShadow: [
+            boxShadow: const [
               BoxShadow(
                 color: Color(0x66000000),
                 blurRadius: 10,
