@@ -36,15 +36,16 @@ class MyApp extends StatelessWidget {
         ),
         initialRoute: VideoVerification.videoVerificationtRoute,
         routes: {
-          '/auth': (context) => const AuthScreen(),
-          // Route for the login screen
-          UploadDocument.uploadDocumentRoute: (context) => UploadDocument(),
+          '/auth': (context) =>
+              const AuthScreen(),
+               // Route for the login screen
+               UploadDocument.uploadDocumentRoute: (context) => const UploadDocument(),
           VideoVerification.videoVerificationtRoute: (context) =>
-              VideoVerification(),
+              const VideoVerification(),
           '/': (context) => const LoginScreen(),
           '/home': (context) => const Layout(),
-          '/register': (context) => const RegisterScreen(),
-          '/authdone': (context) => const FaceDone(),
+          '/register':(context) => const RegisterScreen(),
+          '/authdone':(context) => const FaceDone(),
         },
       ),
     );

@@ -121,7 +121,7 @@ class _AuthScreenState extends State<AuthScreen> {
                   Positioned(
                     left: 50,
                     top: 600,
-                    child: CustomElevatedButton(
+                    child: CustomBottomButton(
                       onPressed: _authenticate,
                       text: 'Verify My ID',
                     ),

@@ -12,6 +12,8 @@ class RegisterScreen extends StatelessWidget {
       title: 'Register Screen',
       home: Scaffold(
         body: Container(
+          width: 390,
+          height: 700,
           decoration: const BoxDecoration(
             image: DecorationImage(
               image: AssetImage('assets/bg2.png'), 
@@ -159,7 +161,7 @@ class _RegisterFormState extends State<RegisterForm> {
               },
             ),
             const SizedBox(height: 20),
-            CustomElevatedButton(
+            CustomBottomButton(
               onPressed: () {
                 if (_formKey.currentState!.validate()) {
                   _formKey.currentState!.save();
@@ -167,7 +169,7 @@ class _RegisterFormState extends State<RegisterForm> {
                   // For example, submit it to an API or store it locally
                 }
               },
-              text: 'Verify My ID',
+              text: 'Register',
             ),
           ],
         ),
