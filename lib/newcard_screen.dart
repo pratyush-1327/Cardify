@@ -8,19 +8,25 @@ class NewCard extends StatelessWidget {
   Widget build(BuildContext context) {
     // ignore: non_constant_identifier_names
     return ResponsiveSizer(builder: (context, orientation, ScreenType) {
-      return Material(
-          child: Container(
+      return Scaffold(
+          body: Stack(
+        children: <Widget>[
+          Container(
               decoration: const BoxDecoration(
-                color: Color.fromRGBO(255, 255, 255, 1),
+                image: DecorationImage(
+                    image: AssetImage("assets/bg2.png"), fit: BoxFit.fill),
               ),
               child: Stack(children: <Widget>[
                 Align(
                     alignment: Alignment(0.sp, -2.sp),
                     child: Stack(children: <Widget>[
                       Container(
-                          width: 340,
-                          height: 201,
+                          width: 390,
+                          height: 231,
                           decoration: const BoxDecoration(
+                            image: DecorationImage(
+                                image: AssetImage("assets/card_bg.png"),
+                                fit: BoxFit.fill),
                             borderRadius: BorderRadius.only(
                               topLeft: Radius.circular(20),
                               topRight: Radius.circular(20),
@@ -45,7 +51,7 @@ class NewCard extends StatelessWidget {
                           left: 129,
                           child: Text(
                             'Add Card',
-                            textAlign: TextAlign.left,
+                            textAlign: TextAlign.center,
                             style: TextStyle(
                                 color: Color.fromRGBO(255, 255, 255, 1),
                                 fontFamily: 'Roboto',
@@ -123,7 +129,9 @@ class NewCard extends StatelessWidget {
                             'assets/Vector_4.png',
                           )),
                     ]))
-              ])));
+              ]))
+        ],
+      ));
     });
   }
 }

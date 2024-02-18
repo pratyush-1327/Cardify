@@ -1,3 +1,4 @@
+import 'package:cardify/components/elevatedbtn.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -10,11 +11,18 @@ class RegisterScreen extends StatelessWidget {
     return MaterialApp(
       title: 'Register Screen',
       home: Scaffold(
-        appBar: AppBar(
-        ),
-        body: const RegisterForm(),
+        body: Container(
+          width: 390,
+          height: 700,
+          decoration: const BoxDecoration(
+            image: DecorationImage(
+              image: AssetImage('assets/bg2.png'), 
+              fit: BoxFit.cover,
+            ),
+          ),
+          child: const RegisterForm(),
       ),
-    );
+    ));
   }
 }
 
@@ -153,7 +161,7 @@ class _RegisterFormState extends State<RegisterForm> {
               },
             ),
             const SizedBox(height: 20),
-            ElevatedButton(
+            CustomBottomButton(
               onPressed: () {
                 if (_formKey.currentState!.validate()) {
                   _formKey.currentState!.save();
@@ -161,7 +169,7 @@ class _RegisterFormState extends State<RegisterForm> {
                   // For example, submit it to an API or store it locally
                 }
               },
-              child: const Text('Register'),
+              text: 'Register',
             ),
           ],
         ),

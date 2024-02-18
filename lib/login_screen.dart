@@ -20,8 +20,10 @@ class _LoginScreenState extends State<LoginScreen> {
   Widget build(BuildContext context) {
     // ignore: non_constant_identifier_names
     return ResponsiveSizer(builder: (context, orientation, ScreenType) {
-      return Material(
-          child: Container(
+      return Scaffold(
+          body: Stack(
+        children: <Widget>[
+          Container(
               decoration: const BoxDecoration(
                 image: DecorationImage(
                     image: AssetImage("assets/bg2.png"), fit: BoxFit.fill),
@@ -30,7 +32,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 builder: (context, value, child) {
                   return Stack(children: <Widget>[
                     Align(
-                        alignment: const Alignment(-0.7, -0.67),
+                        alignment: const Alignment(0, -0.67),
                         child: Text(
                           'Welcome to',
                           //textAlign: TextAlign.left,
@@ -48,11 +50,11 @@ class _LoginScreenState extends State<LoginScreen> {
                               color: const Color.fromRGBO(0, 0, 0, 1),
                               fontFamily: 'Prompt',
                               fontSize: 23.sp,
-                              fontWeight: FontWeight.w500,
+                              fontWeight: FontWeight.w300,
                               height: 3.sp),
                         )),
                     Align(
-                        alignment: const Alignment(-0.2, -0.53),
+                        alignment: const Alignment(0, -0.53),
                         child: Text(
                           'Cardify',
                           style: TextStyle(
@@ -115,9 +117,9 @@ class _LoginScreenState extends State<LoginScreen> {
                                               const Color.fromARGB(255, 255, 255, 255)))),
                             ]))),
                     Container(
-                        alignment: Alignment(0.5.sp, 3.6.sp),
+                        alignment: Alignment(0.5.sp, 3.1.sp),
                         child: SizedBox(
-                            height: 22.sp,
+                            height: 24.sp,
                             width: 60.sp,
                             child: Stack(children: <Widget>[
                               ElevatedButton(
@@ -126,7 +128,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                           Color.fromARGB(255, 255, 255, 255)),
                                       padding:
                                           MaterialStateProperty.all<EdgeInsets>(
-                                              const EdgeInsets.all(10)),
+                                              const EdgeInsets.all(5)),
                                       shape: MaterialStateProperty.all<
                                               RoundedRectangleBorder>(
                                           RoundedRectangleBorder(
@@ -137,7 +139,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                   onPressed: () {},
                                   child: Row(children: [
                                     Image.asset("assets/google.png"),
-                                    const Text("    Login with Google",
+                                    const Text("      Login with Google",
                                         style: TextStyle(
                                             fontSize: 16,
                                             color:
@@ -145,7 +147,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                   ])),
                             ]))),
                     Align(
-                        alignment: Alignment(-2.55.sp, 3.9.sp),
+                        alignment: Alignment(-2.45.sp, 3.6.sp),
                         child: Text(
                           'Don’t have account?',
                           textAlign: TextAlign.left,
@@ -159,8 +161,7 @@ class _LoginScreenState extends State<LoginScreen> {
                               height: 5.sp),
                         )),
                     Align(
-                        alignment: Alignment(2.5.sp, 3.9.sp),
-                        
+                        alignment: Alignment(2.5.sp, 3.6.sp),
                         child: GestureDetector(
                           onTap: () {
                             Navigator.pushNamed(context, '/register');
@@ -169,7 +170,7 @@ class _LoginScreenState extends State<LoginScreen> {
                             'Register Now',
                             textAlign: TextAlign.left,
                             style: TextStyle(
-                                color: Color.fromARGB(255, 245, 8, 185),
+                                color: const Color.fromARGB(255, 182, 3, 137),
                                 fontFamily: 'Inter',
                                 fontSize: 15.sp,
                                 letterSpacing:
@@ -217,12 +218,14 @@ class _LoginScreenState extends State<LoginScreen> {
                         width: double.infinity,
                         height: double.infinity,
                         color: Colors.grey.shade400.withOpacity(0.5),
-                        child: Center(child: CircularProgressIndicator()),
+                        child: const Center(child: CircularProgressIndicator()),
                       )
                     ],
                   ]);
                 },
-              )));
+              ))
+        ],
+      ));
     });
   }
 }
