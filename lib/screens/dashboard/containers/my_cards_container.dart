@@ -13,17 +13,20 @@ class MyCards extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
-        const Text(
-          "My Cards",
-          textAlign: TextAlign.left,
-          style: TextStyle(color: Colors.black, fontSize: 20),
+        const Padding(
+          padding: EdgeInsets.symmetric(horizontal: 12.0),
+          child: Text(
+            "My Cards",
+            textAlign: TextAlign.left,
+            style: TextStyle(color: Colors.black, fontSize: 20),
+          ),
         ),
         const SizedBox(
           height: 10.0,
         ),
         CarouselSlider(
           options: CarouselOptions(
-            height: 200.0, // Specify your desired height
+            height: 250, // Specify your desired height
             enlargeCenterPage: true,
             autoPlay: true,
             aspectRatio: 157 / 250,
@@ -33,16 +36,15 @@ class MyCards extends StatelessWidget {
             viewportFraction: 0.8,
           ),
           items: [
-            CardComponent(
-              color: Pallete.blue.withOpacity(0.68),
-            ),
-            CardComponent(color: Pallete.purple.withOpacity(0.51)),
+            CardComponent(color: Pallete.darkBlue, bgImage: Assets.cardBg1),
+            CardComponent(color: Pallete.pink),
           ].map((i) {
             return Builder(
               builder: (BuildContext context) {
                 return Container(
                   width: MediaQuery.of(context).size.width,
-                  margin: const EdgeInsets.symmetric(horizontal: 5.0),
+                  // margin: const EdgeInsets.symmetric(horizontal: 5.0),
+                  padding: const EdgeInsets.symmetric(vertical: 20.0),
                   child: i,
                 );
               },
@@ -50,25 +52,28 @@ class MyCards extends StatelessWidget {
           }).toList(),
         ),
         const SizedBox(
-          height: 10.0,
+          height: 20.0,
         ),
-        const Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            OptionButton(icon: Assets.payment, text: "Payment"),
-            SizedBox(
-              width: 20,
-            ),
-            OptionButton(icon: Assets.send, text: "Send"),
-            SizedBox(
-              width: 20,
-            ),
-            OptionButton(icon: Assets.recieve, text: "Recieve"),
-            SizedBox(
-              width: 20,
-            ),
-            OptionButton(icon: Assets.more, text: "More")
-          ],
+        const Padding(
+          padding: EdgeInsets.symmetric(horizontal: 12.0),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              OptionButton(icon: Assets.payment, text: "Payment"),
+              SizedBox(
+                width: 20,
+              ),
+              OptionButton(icon: Assets.send, text: "Send"),
+              SizedBox(
+                width: 20,
+              ),
+              OptionButton(icon: Assets.recieve, text: "Recieve"),
+              SizedBox(
+                width: 20,
+              ),
+              OptionButton(icon: Assets.more, text: "More")
+            ],
+          ),
         )
       ],
     );

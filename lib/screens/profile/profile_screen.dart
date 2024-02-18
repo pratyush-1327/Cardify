@@ -15,10 +15,13 @@ class ProfileScreen extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
-        Text(
-          "My Profile",
-          style: TextStyle(color: Colors.black, fontSize: 20),
-          textAlign: TextAlign.left,
+        Padding(
+          padding: EdgeInsets.symmetric(horizontal: 12.0),
+          child: Text(
+            "My Profile",
+            style: TextStyle(color: Colors.black, fontSize: 20),
+            textAlign: TextAlign.left,
+          ),
         ),
         UserDetails(),
         SizedBox(
@@ -28,30 +31,33 @@ class ProfileScreen extends StatelessWidget {
         SizedBox(
           height: 10,
         ),
-        Row(
-          children: [
-            Expanded(
-                child: ActionButton(
-              text: "Delete Account",
-              bgColor: Pallete.blue,
-              imageUrl: Assets.deleteAccount,
-            )),
-            SizedBox(
-              width: 10,
-            ),
-            Expanded(
-                child: ActionButton(
-              fun: () {
-                context.read<FireAuth>().logout().then((value) {
-                  Navigator.pushNamedAndRemoveUntil(
-                      context, "/", (route) => false);
-                });
-              },
-              text: "Logout",
-              bgColor: Pallete.red,
-              imageUrl: Assets.logout,
-            )),
-          ],
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 12.0),
+          child: Row(
+            children: [
+              Expanded(
+                  child: ActionButton(
+                text: "Delete Account",
+                bgColor: Pallete.blue,
+                imageUrl: Assets.deleteAccount,
+              )),
+              SizedBox(
+                width: 10,
+              ),
+              Expanded(
+                  child: ActionButton(
+                fun: () {
+                  context.read<FireAuth>().logout().then((value) {
+                    Navigator.pushNamedAndRemoveUntil(
+                        context, "/", (route) => false);
+                  });
+                },
+                text: "Logout",
+                bgColor: Pallete.red,
+                imageUrl: Assets.logout,
+              )),
+            ],
+          ),
         )
       ],
     );

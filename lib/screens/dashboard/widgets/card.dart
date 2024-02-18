@@ -1,10 +1,14 @@
+import 'dart:ui';
+
+import 'package:cardify/constants/Assets.dart';
 import 'package:flutter/material.dart';
 
 class CardComponent extends StatelessWidget {
   // final double width;
   final Color color;
+  final String? bgImage;
   final double cardRadio = 0.628;
-  const CardComponent({super.key, required this.color});
+  const CardComponent({super.key, required this.color, this.bgImage});
 
   @override
   Widget build(BuildContext context) {
@@ -14,7 +18,22 @@ class CardComponent extends StatelessWidget {
       // height: cardRadio * width,
       decoration: BoxDecoration(
         color: color,
+        image: bgImage != null
+            ? DecorationImage(
+                image: AssetImage(bgImage!),
+                fit: BoxFit.cover,
+              )
+            : null,
         borderRadius: BorderRadius.circular(20),
+        // gradient: LinearGradient(
+        //   colors: [
+        //     color,
+        //     color,
+        //     Colors.white,
+        //   ],
+        //   begin: Alignment.topRight,
+        //   end: Alignment.bottomLeft,
+        // ),
         boxShadow: [
           BoxShadow(
             color: Colors.black.withOpacity(0.25),
@@ -24,28 +43,42 @@ class CardComponent extends StatelessWidget {
           ),
         ],
       ),
-      child: const Row(
+      child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        crossAxisAlignment: CrossAxisAlignment.end,
         children: [
-          Column(
-            mainAxisAlignment: MainAxisAlignment.end,
-            crossAxisAlignment: CrossAxisAlignment.start,
+          Align(
+              alignment: Alignment.centerLeft, child: Image.asset(Assets.chip)),
+          const Text("0000 0000 0000 0000",
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+                fontSize: 12,
+                fontStyle: FontStyle.italic,
+              )),
+          const Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            crossAxisAlignment: CrossAxisAlignment.end,
             children: [
-              Text(
-                "Name",
-                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
+              Column(
+                mainAxisAlignment: MainAxisAlignment.end,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    "Name",
+                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 10),
+                  ),
+                  Text(
+                    "MM/YY",
+                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 10),
+                  ),
+                ],
               ),
               Text(
-                "0000-0000-0000-0000",
-                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
-              ),
+                "***",
+                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 8),
+              )
             ],
           ),
-          Text(
-            "00/00/0000",
-            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 14),
-          )
         ],
       ),
     );

@@ -33,8 +33,8 @@ class ActionButton extends StatelessWidget {
           children: [
             ClipOval(
               child: Container(
-                  width: 50,
-                  height: 50,
+                  width: 35,
+                  height: 35,
                   padding: const EdgeInsets.all(10),
                   color: Colors.white,
                   child: Image.asset(imageUrl, color: Colors.black)),
@@ -52,9 +52,8 @@ class ActionButton extends StatelessWidget {
         ),
       ),
       onTap: () {
-        if(fun != null){
-
-        fun!.call();
+        if (fun != null) {
+          fun!.call();
         }
       },
     );

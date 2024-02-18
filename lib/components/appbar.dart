@@ -15,10 +15,14 @@ class CardifyAppBar extends StatelessWidget {
           toolbarHeight: 70.0,
           leading: Container(
             padding: const EdgeInsets.all(4.0),
-            child: const CircleAvatar(
+            child: CircleAvatar(
               backgroundColor: Pallete.blue,
               radius: 50,
-              child: Text("A"),
+              child: Image.asset(
+                Assets.user,
+                width: 25,
+                height: 25,
+              ),
             ),
           ),
           title: Column(
@@ -30,7 +34,7 @@ class CardifyAppBar extends StatelessWidget {
               ),
               Text(
                 value.userdata!.displayName ?? "test",
-                style: TextStyle(fontSize: 14, color: Pallete.blue),
+                style: TextStyle(fontSize: 14, color: Pallete.pink),
               )
             ],
           ),

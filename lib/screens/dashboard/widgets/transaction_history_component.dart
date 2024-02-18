@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 
 class TransactionHistory extends StatelessWidget {
-  const TransactionHistory({super.key});
+  final Color avatarBg;
+  const TransactionHistory({super.key, required this.avatarBg});
 
   @override
   Widget build(BuildContext context) {
@@ -20,17 +21,17 @@ class TransactionHistory extends StatelessWidget {
               offset: const Offset(6, 8),
             )
           ]),
-      child: const Row(
+      child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           CircleAvatar(
-            backgroundColor: Colors.blue,
+            backgroundColor: avatarBg,
             radius: 25,
           ),
-          SizedBox(
+          const SizedBox(
             width: 10,
           ),
-          Expanded(
+          const Expanded(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -45,10 +46,10 @@ class TransactionHistory extends StatelessWidget {
               ],
             ),
           ),
-          SizedBox(
+          const SizedBox(
             width: 10,
           ),
-          Text(
+          const Text(
             "\$00.00",
             style: TextStyle(color: Colors.black, fontSize: 14),
           )
