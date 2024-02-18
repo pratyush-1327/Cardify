@@ -28,8 +28,8 @@ class Field extends StatelessWidget {
         children: [
           ClipOval(
             child: Container(
-                width: 50,
-                height: 50,
+                width: 35,
+                height: 35,
                 padding: const EdgeInsets.all(10),
                 color: Pallete.blue,
                 child: Image.asset(imageUrl, color: Colors.white)),
@@ -49,7 +49,7 @@ class Field extends StatelessWidget {
                 if (value != null)
                   Text(
                     value!,
-                    style: const TextStyle(color: Pallete.blue, fontSize: 12),
+                    style: const TextStyle(color: Pallete.pink, fontSize: 12),
                   )
               ],
             ),

@@ -7,6 +7,7 @@ class TransactionContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      padding: const EdgeInsets.symmetric(horizontal: 12.0),
       margin: const EdgeInsets.symmetric(vertical: 10),
       child: const Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -21,9 +22,15 @@ class TransactionContainer extends StatelessWidget {
           ),
           Column(
             children: [
-              TransactionHistory(),
-              TransactionHistory(),
-              TransactionHistory(),
+              TransactionHistory(
+                avatarBg: Colors.pink,
+              ),
+              TransactionHistory(
+                avatarBg: Colors.yellow,
+              ),
+              TransactionHistory(
+                avatarBg: Colors.blue,
+              ),
             ],
           ),
         ],

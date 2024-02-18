@@ -48,20 +48,26 @@ class _LayoutState extends State<Layout> {
                   Expanded(
                     child: SingleChildScrollView(
                       child: Container(
-                        padding: const EdgeInsets.all(12),
-                        child: IntrinsicHeight(
-                          child: IndexedStack(
-                            index: _page,
-                            children: childrens,
-                          ),
+                        margin: const EdgeInsets.only(bottom: 100),
+                        child: Column(
+                          children: List.generate(childrens.length, (index) {
+                            return Visibility(
+                              maintainState: true,
+                              visible: _page == index,
+                              child: childrens[index],
+                            );
+                          }),
                         ),
                       ),
                     ),
                   ),
-                  CardifyBottomNavigationBar(
-                    onPageChange: onPageChange,
-                  )
                 ],
+              ),
+            ),
+            Align(
+              alignment: Alignment.bottomCenter,
+              child: CardifyBottomNavigationBar(
+                onPageChange: onPageChange,
               ),
             ),
           ],
