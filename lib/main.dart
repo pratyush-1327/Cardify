@@ -6,7 +6,6 @@ import 'package:cardify/provider/auth.provider.dart';
 import 'package:cardify/register_screen.dart';
 import 'package:cardify/screens/upload.document.dart';
 import 'package:cardify/screens/video.verification.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:cardify/login_screen.dart';

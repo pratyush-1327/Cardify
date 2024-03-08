@@ -28,13 +28,13 @@ class CardifyAppBar extends StatelessWidget {
           title: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(
+              const Text(
                 "Welcome Back",
                 style: TextStyle(fontSize: 12, color: Colors.black),
               ),
               Text(
                 value.userdata!.displayName ?? "test",
-                style: TextStyle(fontSize: 14, color: Pallete.pink),
+                style: const TextStyle(fontSize: 14, color: Pallete.pink),
               )
             ],
           ),

@@ -130,14 +130,14 @@ class BankOps extends StatelessWidget {
               }),
         ),
         bottomNavigationBar: Transform.translate(
-          offset: Offset(0, -20),
+          offset: const Offset(0, -20),
           child: ElevatedButton(
             style: ElevatedButton.styleFrom(
-              shape: CircleBorder(),
-              padding: EdgeInsets.all(20),
+              shape: const CircleBorder(),
+              padding: const EdgeInsets.all(20),
             ),
             onPressed: () {},
-            child: Icon(Icons.close),
+            child: const Icon(Icons.close),
           ),
         ),
         extendBodyBehindAppBar: true,

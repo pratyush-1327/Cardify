@@ -57,7 +57,7 @@ class _VideoVerificationState extends State<VideoVerification> {
     return Container(
       height: double.infinity,
       width: double.infinity,
-      decoration: BoxDecoration(
+      decoration: const BoxDecoration(
           image: DecorationImage(
               image: AssetImage(
                 "assets/bg2.png",
@@ -74,7 +74,7 @@ class _VideoVerificationState extends State<VideoVerification> {
                 height: 333,
                 width: double.infinity,
                 decoration: ShapeDecoration(
-                  color: Color(0x00D9D9D9),
+                  color: const Color(0x00D9D9D9),
                   shape: RoundedRectangleBorder(
                     side: BorderSide(
                       width: 4,
@@ -97,7 +97,7 @@ class _VideoVerificationState extends State<VideoVerification> {
                           });
                         },
                         splashColor: Colors.black.withOpacity(0.4),
-                        child: Icon(Icons.videocam_outlined,
+                        child: const Icon(Icons.videocam_outlined,
                             size: 100,
                             color: Color.fromARGB(255, 116, 116, 116))),
               ),
@@ -118,7 +118,7 @@ class _VideoVerificationState extends State<VideoVerification> {
                             // onCamera = true;
                           });
                         },
-                        icon: Icon(Icons.mic_off_outlined,
+                        icon: const Icon(Icons.mic_off_outlined,
                             size: 50, color: Color.fromARGB(255, 0, 0, 0))),
                     IconButton(
                         onPressed: () {
@@ -127,7 +127,7 @@ class _VideoVerificationState extends State<VideoVerification> {
                             onCamera = false;
                           });
                         },
-                        icon: Icon(Icons.videocam_off_outlined,
+                        icon: const Icon(Icons.videocam_off_outlined,
                             size: 50, color: Color.fromARGB(255, 0, 0, 0)))
                   ],
                 ),
@@ -146,7 +146,7 @@ class _VideoVerificationState extends State<VideoVerification> {
               onTap: () {},
               borderRadius: BorderRadius.circular(35),
               splashColor: Colors.white,
-              child: Center(
+              child: const Center(
                 child: Icon(
                   Icons.call_end_outlined,
                   color: Colors.white,

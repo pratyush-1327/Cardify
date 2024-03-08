@@ -15,7 +15,7 @@ class ProfileScreen extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
-        Padding(
+        const Padding(
           padding: EdgeInsets.symmetric(horizontal: 12.0),
           child: Text(
             "My Profile",
@@ -23,25 +23,25 @@ class ProfileScreen extends StatelessWidget {
             textAlign: TextAlign.left,
           ),
         ),
-        UserDetails(),
-        SizedBox(
+        const UserDetails(),
+        const SizedBox(
           height: 10,
         ),
-        Options(),
-        SizedBox(
+        const Options(),
+        const SizedBox(
           height: 10,
         ),
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 12.0),
           child: Row(
             children: [
-              Expanded(
+              const Expanded(
                   child: ActionButton(
                 text: "Delete Account",
                 bgColor: Pallete.blue,
                 imageUrl: Assets.deleteAccount,
               )),
-              SizedBox(
+              const SizedBox(
                 width: 10,
               ),
               Expanded(

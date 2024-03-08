@@ -36,8 +36,8 @@ class MyCards extends StatelessWidget {
             viewportFraction: 0.8,
           ),
           items: [
-            CardComponent(color: Pallete.darkBlue, bgImage: Assets.cardBg1),
-            CardComponent(color: Pallete.pink),
+            const CardComponent(color: Pallete.darkBlue, bgImage: Assets.cardBg1),
+            const CardComponent(color: Pallete.pink),
           ].map((i) {
             return Builder(
               builder: (BuildContext context) {

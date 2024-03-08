@@ -36,7 +36,7 @@ class FireAuth extends ChangeNotifier {
       await FirebaseAuth.instance.signOut().then((value) {
         notifyListeners();
       });
-    } on FirebaseAuthException catch (e) {}
+    } on FirebaseAuthException {}
   }
 }
 
